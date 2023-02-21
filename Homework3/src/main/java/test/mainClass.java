@@ -39,15 +39,15 @@ public class mainClass {
 
         List<Student> studentList = new ArrayList<>();
 
-        studentList.add(student1);
-        studentList.add(student2);
-        studentList.add(student3);
-        studentList.add(student4);
-
         student1.getStudentCourseList().add(course1);
         student1.getStudentCourseList().add(course2);
         student2.getStudentCourseList().add(course3);
         student4.getStudentCourseList().add(course2);
+
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
+        studentList.add(student4);
 
         Instructor permanentInstructor1 = new Instructor("Koray",
                 "Sabancı", "999 999 99 99");
@@ -59,21 +59,15 @@ public class mainClass {
                 "222 222 22 22");
 
         List<Instructor> instructorList = new ArrayList<>();
+
         instructorList.add(permanentInstructor1);
         instructorList.add(permanentInstructor2);
         instructorList.add(visitingResearcher1);
         instructorList.add(visitingResearcher2);
 
-        //permanentInstructor1.getInstructorsCourseList().add(course1);
-        //permanentInstructor1.getInstructorsCourseList().add(course2);
-        //permanentInstructor2.getInstructorsCourseList().add(course2); //course2 already has instructor
-        //visitingResearcher1.getInstructorsCourseList().add(course3);
-        //visitingResearcher2.getInstructorsCourseList().add(course1); //course1 already has instructor
-
         course1.setInstructor(permanentInstructor1);
         course2.setInstructor(permanentInstructor1);
         course3.setInstructor(visitingResearcher1);
-
 
         saveInstructors(instructorList,entityManager);
         saveCourses(courseList,entityManager);
@@ -94,7 +88,6 @@ public class mainClass {
 
         //studentController.saveStudent(manuelInsertStudent);
         //courseController.saveCourse(manuelInsertCourse);
-
 
         //EntityManagerUtils.closeEntityManager(entityManager);
 

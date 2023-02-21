@@ -16,7 +16,7 @@ public class Instructor {
     private String instructorPhoneNumber;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "instructor")
     private List<Course> instructorsCourseList = new ArrayList<>();
 
     //Constructors

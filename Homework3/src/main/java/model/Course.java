@@ -15,7 +15,7 @@ public class Course {
     private String courseCode;
     private int creditScore;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "studentCourseList")
     private List<Student> CourseStudentList = new ArrayList<>();
 
     @ManyToOne
