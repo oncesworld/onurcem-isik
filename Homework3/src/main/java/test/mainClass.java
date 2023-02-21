@@ -23,6 +23,10 @@ public class mainClass {
         Course course2 = new Course("Java", "IT524", 4);
         Course course3 = new Course("EE Java", "IT526", 99);
 
+        List<Course> courseList = new ArrayList<>();
+        courseList.add(course1);
+        courseList.add(course2);
+        courseList.add(course3);
 
         Student student1 = new Student("Onur",
                 LocalDate.of(1993,9,16),"Istanbul","E");
@@ -55,7 +59,6 @@ public class mainClass {
                 "222 222 22 22");
 
         List<Instructor> instructorList = new ArrayList<>();
-
         instructorList.add(permanentInstructor1);
         instructorList.add(permanentInstructor2);
         instructorList.add(visitingResearcher1);
@@ -67,39 +70,33 @@ public class mainClass {
         //visitingResearcher1.getInstructorsCourseList().add(course3);
         //visitingResearcher2.getInstructorsCourseList().add(course1); //course1 already has instructor
 
-        List<Course> courseList = new ArrayList<>();
-
-        courseList.add(course1);
-        courseList.add(course2);
-        courseList.add(course3);
-
         course1.setInstructor(permanentInstructor1);
         course2.setInstructor(permanentInstructor1);
         course3.setInstructor(visitingResearcher1);
 
 
-        //saveInstructors(instructorList,entityManager);
-        //saveCourses(courseList,entityManager);
-        //saveStudents(studentList,entityManager);
+        saveInstructors(instructorList,entityManager);
+        saveCourses(courseList,entityManager);
+        saveStudents(studentList,entityManager);
 
-        StudentController studentController = new StudentController();
-        CourseController courseController = new CourseController();
+        //StudentController studentController = new StudentController();
+        //CourseController courseController = new CourseController();
 
-        Student foundStudent = studentController.findStudent(10);
-        System.out.println("============");
-        System.out.println(foundStudent.getStudentName());
-        System.out.println("============");
+        //Student foundStudent = studentController.findStudent(2);
+        //System.out.println("============");
+        //System.out.println(foundStudent.getStudentName());
+        //System.out.println("============");
 
-        Student manuelInsertStudent = new Student("Ichigo Kurosaki",
-                LocalDate.of(1993,9,16),"Istanbul","E");
+        //Student manuelInsertStudent = new Student("Ichigo Kurosaki",
+          //      LocalDate.of(1993,9,16),"Istanbul","E");
 
-        Course manuelInsertCourse = new Course("Shinigami", "IT501", 3);
+        //Course manuelInsertCourse = new Course("Shinigami", "IT501", 3);
 
-        studentController.saveStudent(manuelInsertStudent);
-        courseController.saveCourse(manuelInsertCourse);
+        //studentController.saveStudent(manuelInsertStudent);
+        //courseController.saveCourse(manuelInsertCourse);
 
 
-        EntityManagerUtils.closeEntityManager(entityManager);
+        //EntityManagerUtils.closeEntityManager(entityManager);
 
     }
 

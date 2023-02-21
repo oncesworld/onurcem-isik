@@ -21,7 +21,6 @@ public class Student {
     private List<Course> studentCourseList = new ArrayList<>();
 
     //Constructor
-
     public Student(String studentName, LocalDate studentBirthDate, String studentAddress, String gender) {
         this.studentName = studentName;
         this.studentBirthDate = studentBirthDate;
