@@ -1,6 +1,8 @@
 package edu.sabanciuniv.homework4.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +14,10 @@ public class Student {
     private String studentFirstName;
     private String studentLastName;
     private int age;
+
+    @ManyToOne
+    @JsonManagedReference
+    Faculty faculty;
 
     public Student(String studentFirstName, String studentLastName, int age, Faculty faculty) {
         this.studentFirstName = studentFirstName;
