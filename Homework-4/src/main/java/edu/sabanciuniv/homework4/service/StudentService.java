@@ -2,6 +2,7 @@ package edu.sabanciuniv.homework4.service;
 
 
 import edu.sabanciuniv.homework4.model.Student;
+import edu.sabanciuniv.homework4.model.dto.StudentDto;
 import edu.sabanciuniv.homework4.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,5 @@ public class StudentService {
     public void deleteStudent(Student student){
         studentRepository.delete(student);
     }
-
 
 }

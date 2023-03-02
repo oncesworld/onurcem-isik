@@ -18,8 +18,9 @@ public class Faculty {
     private int Id;
     private String facultyName;
 
-    @OneToMany(mappedBy = "faculty")
+    @OneToMany
     @JsonBackReference
+    @JoinColumn(name = "faculty_id")
     private List<Student> studentListOfFaculty = new ArrayList<>();
 
     public Faculty(String facultyName) {

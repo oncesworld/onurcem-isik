@@ -2,11 +2,13 @@ package edu.sabanciuniv.homework4.service;
 
 import edu.sabanciuniv.homework4.model.Faculty;
 import edu.sabanciuniv.homework4.model.Student;
+import edu.sabanciuniv.homework4.model.dto.StudentDto;
 import edu.sabanciuniv.homework4.repository.FacultyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,5 +28,20 @@ public class FacultyService {
 
     public List<Faculty> findAllFaculties() {
         return facultyRepository.findAll();
+    }
+
+    public List<StudentDto> findFacultiesStudentWithDto(int id) {
+        Faculty faculty = facultyRepository.findFacultiesStudents(id);
+        List<StudentDto> studentDtoList = new ArrayList<>();
+        for(Student student : faculty.getStudentListOfFaculty()){
+            StudentDto studentDto = StudentDto.builder()
+                    .studentFirstName(student.getStudentFirstName())
+                    .studentLastName(student.getStudentLastName())
+                    .build();
+
+            studentDtoList.add(studentDto);
+        }
+        return studentDtoList;
+
     }
 }

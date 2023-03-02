@@ -1,6 +1,7 @@
 package edu.sabanciuniv.homework4.controller;
 
 import edu.sabanciuniv.homework4.model.Student;
+import edu.sabanciuniv.homework4.model.dto.StudentDto;
 import edu.sabanciuniv.homework4.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
