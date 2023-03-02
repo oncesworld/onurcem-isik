@@ -19,7 +19,7 @@ public class Student {
     @JsonManagedReference
     Faculty faculty;
 
-    public Student(String studentFirstName, String studentLastName, int age, Faculty faculty) {
+    public Student(String studentFirstName, String studentLastName, int age) {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
         this.age = age;
@@ -60,4 +60,11 @@ public class Student {
         this.age = age;
     }
 
+    public Faculty getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
 }
