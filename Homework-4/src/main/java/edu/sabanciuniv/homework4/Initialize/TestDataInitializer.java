@@ -6,6 +6,7 @@ import edu.sabanciuniv.homework4.model.Student;
 import edu.sabanciuniv.homework4.repository.FacultyRepository;
 import edu.sabanciuniv.homework4.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class TestDataInitializer implements CommandLineRunner{
     private final StudentRepository studentRepository;
     private final FacultyRepository facultyRepository;
@@ -41,6 +43,8 @@ public class TestDataInitializer implements CommandLineRunner{
             studentRepository.save(student2);
             studentRepository.save(student3);
             studentRepository.save(student4);
+
+            log.info("Specimens has been saved!");
 
     }
 }

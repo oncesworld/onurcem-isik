@@ -1,11 +1,11 @@
 package edu.sabanciuniv.homework4.service;
 
+import edu.sabanciuniv.homework4.exceptions.FacultyNotFoundException;
 import edu.sabanciuniv.homework4.model.Faculty;
 import edu.sabanciuniv.homework4.model.Student;
 import edu.sabanciuniv.homework4.model.dto.StudentDto;
 import edu.sabanciuniv.homework4.repository.FacultyRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +19,10 @@ public class FacultyService {
 
     public List<Student> findFacultiesStudent(int id) {
         Faculty faculty = facultyRepository.findFacultiesStudents(id);
+
+        if(faculty == null){
+            throw new FacultyNotFoundException("There is no such Faculty with " + id + " id");
+        }
         return faculty.getStudentListOfFaculty();
     }
 
@@ -44,4 +48,6 @@ public class FacultyService {
         return studentDtoList;
 
     }
+
+
 }

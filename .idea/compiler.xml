@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Homework3" />
-        <module name="controlservicerepositoryrelation" />
-        <module name="SpringTest" />
         <module name="Homework-4" />
         <module name="Homework1-2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="controlservicerepositoryrelation" target="17" />
+      <module name="SpringTest" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

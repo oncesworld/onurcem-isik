@@ -37,5 +37,4 @@ public class FacultyController {
         return facultyService.findAllFaculties();
     }
 
-
 }
