@@ -4,8 +4,14 @@ package edu.sabanciuniv.homework4.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
 
     @Id
@@ -23,9 +29,6 @@ public class Student {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
         this.age = age;
-    }
-
-    public Student() {
     }
 
     public int getId() {

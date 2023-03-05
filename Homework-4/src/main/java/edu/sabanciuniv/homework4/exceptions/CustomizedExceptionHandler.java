@@ -22,6 +22,15 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
                 request.getDescription(false));
 
         return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
 
+    @ExceptionHandler
+    public final ResponseEntity<Object> handleUnauthorizedException(Exception ex, WebRequest request)
+        throws Exception{
+
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
+                request.getDescription(false));
+
+        return new ResponseEntity(exceptionResponse, HttpStatus.UNAUTHORIZED);
     }
 }

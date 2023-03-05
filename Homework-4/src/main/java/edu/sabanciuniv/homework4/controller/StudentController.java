@@ -1,7 +1,8 @@
 package edu.sabanciuniv.homework4.controller;
 
 import edu.sabanciuniv.homework4.model.Student;
-import edu.sabanciuniv.homework4.model.dto.StudentDto;
+import edu.sabanciuniv.homework4.model.dto.StudentRequest;
+import edu.sabanciuniv.homework4.model.dto.StudentResponse;
 import edu.sabanciuniv.homework4.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +22,9 @@ public class StudentController {
     }
 
     @PostMapping("/student")
-    public Student saveNewStudent(@RequestBody Student student){
+    public StudentResponse saveNewStudent(@RequestBody StudentRequest studentRequest){
 
-        return studentService.saveStudent(student);
+        return studentService.saveStudent(studentRequest);
     }
 
     @GetMapping("/student/{id}")
@@ -37,8 +38,8 @@ public class StudentController {
         return studentService.updateStudent(student);
     }
 
-    @DeleteMapping("/student")
-    public void deleteStudent(@RequestBody Student student){
-        studentService.deleteStudent(student);
+    @DeleteMapping("/student/{id}")
+    public void deleteStudent(@PathVariable int id){
+        studentService.deleteStudent(id);
     }
 }
